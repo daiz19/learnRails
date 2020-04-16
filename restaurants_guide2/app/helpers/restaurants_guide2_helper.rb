@@ -1,0 +1,2 @@
+module RestaurantsGuide2Helper
+end

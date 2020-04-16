@@ -1,0 +1,10 @@
+%h2 Budget Simulater
+%p Promotion! 1 pax free for every 10 pax!!
+%form{:action => "result", :method => "post"}
+  %p
+    Number of party:
+    %input{:name => "people", :size => "40", :type => "text"}/
+  %p
+    Budget for 1 pax: $
+    %input{:name => "price", :size => "40", :type => "text"}/
+  %input{:type => "submit", :value => "Calcurate"}/

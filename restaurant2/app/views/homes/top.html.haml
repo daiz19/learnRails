@@ -1,0 +1,13 @@
+%body
+  %h1 Budget Check
+  %p 1 pax free for every 10 pax
+  %form{:action => "result", :method => "post"}
+    %p
+      Number of people
+      = succeed "\u4EBA" do
+        %input{:name => "people", :size => "40", :type => "text"}/
+    %p
+      Budget for each
+      = succeed "\u5186" do
+        %input{:name => "price", :size => "40", :type => "text"}/
+    %input{:type => "submit", :value => "Calc!"}/

@@ -1,0 +1,22 @@
+%h2 Budget Simulater
+%p 1 for free with more than 10 pax.
+%form{:action => "result", :method => "post"}
+  %p
+    Number of party: Pax
+    %input{:name => "people", :size => "40", :type => "text"}/
+  %p
+    Budget for 1 pax: $
+    %input{:name => "price", :size => "40", :type => "text"}/
+  %input{:type => "submit", :value => "Re-Calcurate"}/
+%hr/
+
+%p Total budged is #{@budget.total}
+- if @budget.discount !=0
+  %p
+  = @budget.discount
+  discount applied
+- else
+  %p 
+  No discount applied
+%hr/
+%a{:href => "top"}Back to Top

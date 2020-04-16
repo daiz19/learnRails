@@ -1,0 +1,22 @@
+%h2 予算シュミレーター
+%p 今なら10人以上の場合は、10人ごとに1人分が無料になります
+%form{:action => "result", :method => "post"}
+  %p
+    人数　
+    %input{:name => "people", :size => "40", :type => "text", :value => "#{@people}"}>/
+    人
+  %p
+    一人当たりの予算　
+    %input{:name => "price", :size => "40", :type => "text", :value => "#{@price}"}>/
+    円
+  %input{:type => "submit", :value => "再計算する"}/
+  %hr/
+  %p
+    合計の予算は#{@budget.total}円です
+  - if @discount != 0
+    %p
+      = @budget.discount
+      円の割引が適用されています
+  - else
+    %p 割引はありません
+  %a{:href => "top"} トップに戻る

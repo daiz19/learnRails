@@ -1,0 +1,9 @@
+<h1>Edit Article</h1>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', articles_path %>
+<br><br>
+<%= link_to 'Delete', article_path(@article), 
+        method: :delete,
+        data: { confirm: 'Are you sure?' } %>

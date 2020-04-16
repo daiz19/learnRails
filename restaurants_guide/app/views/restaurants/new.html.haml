@@ -1,0 +1,26 @@
+-# STEP1:インタラクティブなページ作成での使用コードに近いもの
+%form{:action => "/restaurants", :method => "post"}
+  =hidden_field_tag :authenticity_token, form_authenticity_token
+  %p
+    名前　
+    %input{:name => "restaurant[name]", :size => "40", :type => "text"}>/
+  %p
+    住所　
+    %input{:name => "restaurant[address]", :size => "40", :type => "text"}>/
+  %input{:type => "submit", :value => "登録する"}/
+%hr/
+
+-# STEP2:form_withを使って楽にフォーム作成する
+=form_with model: @restaurant do |f|
+  =f.label '名前'
+  =f.text_field :name
+  =f.label '住所'
+  =f.text_field :address
+  =f.submit '登録する'
+%hr/
+
+-# STEP3:bootstrap_formを使ってもっと楽にフォーム作成する
+=bootstrap_form_with model: @restaurant, local: true do |f|
+  =f.text_field :name
+  =f.text_field :address
+  =f.submit

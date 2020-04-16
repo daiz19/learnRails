@@ -1,0 +1,19 @@
+%h1 Restaurant info
+%p
+ ID: 
+ =@restaurant.id
+%p
+ Name: 
+ =@restaurant.name
+%p
+ Address:
+ =@restaurant.address
+%p
+ tel 
+ =@restaurant.tel
+%p
+ =link_to 'edit', edit_restaurant_path
+%p
+ =link_to 'delete', restaurant_path(@restaurant), method: :delete, data: {confirm: 'sure?'}
+%br
+=link_to "Back", restaurants_path
