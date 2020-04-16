@@ -1,0 +1,10 @@
+%h2 New Movie Data
+=bootstrap_form_with model: @work, local: true do |f|
+ =f.text_field :Title
+ =f.text_field :ReleaseYear
+ =f.text_field :Starring
+ =f.text_field :Description
+ =f.submit
+
+%p
+=link_to 'Back', works_path

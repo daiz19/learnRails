@@ -1,8 +1,13 @@
 %h1 Movie Catalogue
 
+%p
+ =link_to 'Create New Data', new_work_path
+
 -@works.each do |work|
- =work.Title
+ =link_to work.Title, work_path(work)
  =work.ReleaseYear
  =work.Starring
  =work.Description
+ =link_to 'Edit', edit_work_path(work)
+ =link_to 'Delete', work_path(work), method: :delete, data: {confirm: 'sure?'}
  %br

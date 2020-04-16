@@ -1,0 +1,11 @@
+%h2 Movie data
+%p
+ =@work.Title
+ =@work.ReleaseYear
+ =@work.Starring
+ =@work.Description
+
+%p
+ =link_to 'Delete', work_path(@work), method: :delete, data: {confirm: 'sure?'}
+%p
+ =link_to 'Back', works_path
