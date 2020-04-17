@@ -1,10 +1,6 @@
 %h2 Edit Movie Data
-=bootstrap_form_with model: @work, local: true do |f|
- =f.text_field :Title
- =f.text_field :ReleaseYear
- =f.text_field :Starring
- =f.text_field :Description
- =f.submit
+
+=render 'form'
 
 %p
 =link_to 'Back', works_path

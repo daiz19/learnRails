@@ -1,9 +1,10 @@
 class WorksController < ApplicationController
+  before_action :work_find, only: [:edit, :show, :update, :destroy]
+
   def index
     @works = Work.all
   end
   def show
-    @work = Work.find(params[:id])
   end
   def new
     @work = Work.new
@@ -17,10 +18,8 @@ class WorksController < ApplicationController
     end
   end
   def edit
-    @work = Work.find(params[:id])
   end
   def update
-    @work = Work.find(params[:id])
     if @work.update(work_params)
       redirect_to work_path(@work)
     else
@@ -28,7 +27,6 @@ class WorksController < ApplicationController
     end
   end
   def destroy
-    @work = Work.find(params[:id])
     @work.destroy
     redirect_to works_path
   end
@@ -38,4 +36,9 @@ class WorksController < ApplicationController
   def work_params
     params[:work].permit!
   end
+
+  def work_find
+    @work = Work.find(params[:id])
+  end
+  
 end

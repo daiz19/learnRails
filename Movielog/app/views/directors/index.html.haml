@@ -1,0 +1,11 @@
+%h1 Directors List
+
+%p
+ =link_to 'Add New', new_director_path
+
+-@directors.each do |director|
+ =director.Director
+ =director.Country
+ =link_to 'Edit', edit_director_path(director)
+ =link_to 'Delete', director_path(director), method: :delete, data: {confirm: 'Sure?'}
+ %br
