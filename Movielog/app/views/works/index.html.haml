@@ -1,13 +1,15 @@
-%h1 Movie Catalogue
 
-%p
- =link_to 'Create New Data', new_work_path
+.container
+  %h1 Movies index
 
--@works.each do |work|
- =link_to work.Title, work_path(work)
- =work.ReleaseYear
- =work.Starring
- =work.Description
- =link_to 'Edit', edit_work_path(work)
- =link_to 'Delete', work_path(work), method: :delete, data: {confirm: 'sure?'}
- %br
+.container
+  .row.list-group
+    -@works.each do |work|
+      .list-group-item
+        =link_to "#{work.Title} / #{work.director.Director} (#{work.ReleaseYear})", work_path(work)
+
+.container
+  %p
+    =link_to 'Add new movie', new_work_path, class: 'btn btn-success'
+  %p
+    =link_to 'Go to Director Index', directors_path, class: 'btn btn-primary'

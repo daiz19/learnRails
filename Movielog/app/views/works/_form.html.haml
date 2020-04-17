@@ -1,6 +1,7 @@
 =bootstrap_form_with model: @work, local: true do |f|
  =f.text_field :Title
+ =f.collection_select :director_id, Director.all, :id, :Director, include_blank: true, class: 'form-control'
  =f.text_field :ReleaseYear
  =f.text_field :Starring
  =f.text_field :Description
- =f.submit
+ =f.submit 'Add new movie', class: "btn btn-primary"

@@ -1,10 +1,30 @@
-%h2 Dierctor data
 
-%p
- =@director.Director
- %br
- =@director.Country
+.container
+  %h2 Dirctor data
 
-%p
- =link_to 'Delete', director_path(@director), method: :delete, data: {confirm: 'sss sure?'}
- =link_to 'Back', directors_path
+.container
+  %table.table.table-striped
+    %thead
+      %tr
+        %th Name
+        %th Country
+    %tbody
+      %tr
+        %td= link_to @director.Director, edit_director_path
+        %td= link_to @director.Country
+
+.container
+  -@director.works.each do |work| 
+    %h5= link_to work.Title, edit_work_path(work)
+      
+.container
+  %p
+    =link_to 'Add new dirctor', new_director_path, class: 'btn btn-primary'
+  %p
+    =link_to 'Add new movie', new_work_path, class: 'btn btn-success'
+
+.container
+  %p
+    =link_to 'Delete', director_path(@director), method: :delete, data: {confirm: 'sure?'}, class: 'btn btn-outline-dark'
+  %p
+    =link_to 'Back', directors_path, class: 'btn btn-outline-info'

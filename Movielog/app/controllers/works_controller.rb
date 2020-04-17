@@ -8,6 +8,7 @@ class WorksController < ApplicationController
   end
   def new
     @work = Work.new
+    @work.director_id = params[:director_id] if params[:director_id].present?
   end
   def create
     @work = Work.new(work_params)
