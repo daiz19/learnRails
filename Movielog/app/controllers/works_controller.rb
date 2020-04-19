@@ -2,7 +2,7 @@ class WorksController < ApplicationController
   before_action :work_find, only: [:edit, :show, :update, :destroy]
 
   def index
-    @works = Work.all
+    @works = Work.all.by_position
   end
   def show
   end
@@ -30,6 +30,11 @@ class WorksController < ApplicationController
   def destroy
     @work.destroy
     redirect_to works_path
+  end
+
+  def move_higher
+    Work.find(params[:id]).move_higher
+    redirect_to :action => 'index'
   end
 
   private

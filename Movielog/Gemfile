@@ -58,3 +58,6 @@ gem 'haml-rails'
 gem 'bootstrap'
 gem 'bootstrap_form'
 gem 'jquery-rails'
+
+gem 'acts_as_list'
+gem 'font-awesome-rails'

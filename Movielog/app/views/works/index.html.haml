@@ -7,7 +7,8 @@
     -@works.each do |work|
       .list-group-item
         =link_to "#{work.Title} / #{work.director.Director} (#{work.ReleaseYear})", work_path(work)
-
+        =link_to higher_work_path(work), class: work.first? ? ' disabled' : '' do
+          %i.fa.fa-arrow-up
 .container
   %p
     =link_to 'Add new movie', new_work_path, class: 'btn btn-success'
