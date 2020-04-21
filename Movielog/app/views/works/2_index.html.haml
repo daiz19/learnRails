@@ -1,0 +1,47 @@
+
+%main#main
+/ ======= Works Section =======
+%section.section.site-portfolio
+  .container
+    .row.mb-5.align-items-center
+      .col-md-12.col-lg-6.mb-4.mb-lg-0{"data-aos" => "fade-up"}
+        %h2 Movie index
+        %p.mb-0 Find you favorite movie!
+      .col-md-12.col-lg-6.text-left.text-lg-right{"data-aos" => "fade-up", "aos-delay" => "100"}
+        .filters
+          =link_to 'Director', directors_path
+    #portfolio-grid.row.no-gutter{"data-aos" => "fade-up", "data-aos-delay" => "200"}
+      -@works.each do |work|  
+        .item.web.col-sm-6.col-md-4.col-lg-4.mb-4
+          =link_to work_path(work), class: 'item-wrap fancybox' do
+            .work-info
+              %h3=work.Title
+              %span=work.ReleaseYear
+              %br
+              %span=work.director.Director
+              %img.img-fluid{:src => "img/img_1.jpg"}/
+    #portfolio-grid.row.no-gutter{"data-aos" => "fade-up", "data-aos-delay" => "200"}
+    -@works.each do |work|  
+      .item.web.col-sm-6.col-md-4.col-lg-4.mb-4
+        =link_to work_path(work), class: 'item-wrap fancybox' do
+          .work-info
+            %h3=work.Title
+            %span=work.ReleaseYear
+            %br
+            %span=work.director.Director
+            %img.img-fluid{:src => "img/img_1.jpg"}/
+    #portfolio-grid.row.no-gutter{"data-aos" => "fade-up", "data-aos-delay" => "200"}
+    -@works.each do |work|  
+      .item.web.col-sm-6.col-md-4.col-lg-4.mb-4
+        =link_to work_path(work), class: 'item-wrap fancybox' do
+          .work-info
+            %h3=work.Title
+            %span=work.ReleaseYear
+            %br
+            %span=work.director.Director
+          %img.img-fluid{:src => "img/img_1.jpg"}/
+    
+  .container
+    =link_to 'Add new movie', new_work_path, class: 'btn btn-outline-primary'
+    %br
+    %br

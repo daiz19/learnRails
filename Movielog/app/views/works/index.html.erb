@@ -1,0 +1,36 @@
+<section class="section site-portfolio">
+  <div class="container">
+    <div class="row mb-5 align-items-center">
+      <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
+        <h2>Movie index in html</h2>
+        <p class="mb-0">Find you favorite movie!</p>
+      </div>
+      <div class="col-md-12 col-lg-6 text-left text-lg-right" data-aos="fade-up" data-aos-delay="100">
+        <div class="filters" id="filters">
+          <%= link_to 'Director', directors_path %>
+        </div>
+      </div>
+    </div>
+    <div class="row no-gutter" id="portfolio-grid" data-aos="fade-up" data-aos-delay="200">
+      <% @works.each do |work| %>
+        <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+          <%= link_to work_path(work), class: 'item-wrap fancybox' do %>
+            <div class="work-info">
+              <h3><%= work.Title %></h3>
+              <span><%= work.ReleaseYear %></span>
+              <br/>
+              <span><%= work.director.Director %></span>
+            </div>
+            <img class="img-fluid" src="img/img_1.jpg"/>
+          <% end %>
+       </div>
+      <% end %>
+    </div>
+  </div>
+    <div class="container">
+      <%= link_to 'Add new movie', new_work_path, class: 'btn btn-outline-primary' %>
+      <br/>
+      <br/>
+    </div>
+  
+</section>

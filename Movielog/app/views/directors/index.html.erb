@@ -1,0 +1,45 @@
+<section class="section site-portfolio">
+  <div class="container">
+    <div class="row mb-5 align-items-center">
+      <div class="col-md-12 col-lg-6 mb-4 mb-lg-0">
+        <h2>Directors index</h2>
+        <p class="mb-0">Find you favorite movie!</p>
+      </div>
+      <div class="col-md-12 col-lg-6 text-left text-lg-right">
+        <div class="filters" id="filters">
+          <%= link_to 'Works', works_path %>
+        </div>
+      </div>
+    </div>
+    <div class="row no-gutter" id="portfolio-grid">
+      <% @directors.each do |director|   %>
+        <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+          <%= link_to work_path(director), class: 'item-wrap fancybox' do %>
+            <div class="work-info">
+              <h3><%= director.Director %></h3>
+              <span><%= director.Country %></span>
+            </div>
+            <img class="img-fluid" src="img/img_2.jpg"/>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="container">
+    <p>
+      <%= link_to 'Add new director', new_director_path, class: 'btn btn-success' %>
+    </p>
+    <p>
+      <%= link_to 'Go to Movie Index', works_path, class: 'btn btn-primary' %>
+    </p>
+  </div>
+</section>
+<div class="container">
+  <div class="row list-group">
+    <% @directors.each do |director| %>
+      <div class="list-group-item">
+        <%= link_to "#{director.Director}  (#{director.Country})", director_path(director) %>
+      </div>
+    <% end %>
+  </div>
+</div>

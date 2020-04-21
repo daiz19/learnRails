@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='width=device-width, initial-scale=1.0' name='viewport'>
+    <title>MyPortfolio Bootstrap Template - Index</title>
+    <meta content='' name='descriptison'>
+    <meta content='' name='keywords'>
+    <!-- Favicons -->
+    <link href='assets/img/favicon.png' rel='icon'>
+    <link href='assets/img/apple-touch-icon.png' rel='apple-touch-icon'>
+    <!-- Google Fonts -->
+    <link href='https://fonts.googleapis.com/css?family=https://fonts.googleapis.com/css?family=Inconsolata:400,500,600,700|Raleway:400,400i,500,500i,600,600i,700,700i' rel='stylesheet'>
+    <!-- Vendor CSS Files -->
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+
+  <!-- ======= Navbar ======= -->
+  <nav class='navbar navbar-light custom-navbar'>
+    <div class='container'>
+      <a class='navbar-brand' href='index.html'>Movie Index</a>
+      <a class='burger' data-target='#main-navbar' data-toggle='collapse' href='#'>
+        <span></span>
+      </a>
+    </div>
+  </nav>
+
+
+  <body>
+    <%= yield %>
+  </body>
+
+
+  
+  <!-- ======= footer ======= -->
+  <footer class='footer' role='contentinfo'>
+    <div class='container'>
+      <div class='row'>
+        <div class='col-sm-6'>
+          <p class='mb-1'>© Copyright Movie Index</p>
+          <div class='credits'>
+            Designed by
+            <a href='https://littlehackers.jp/'>dik</a>
+          </div>
+        </div>
+        <div class='col-sm-6 social text-md-right'>
+          <a href='#'>
+            <span class='icofont-twitter'></span>
+          </a>
+          <a href='#'>
+            <span class='icofont-facebook'></span>
+          </a>
+          <a href='#'>
+            <span class='icofont-dribbble'></span>
+          </a>
+          <a href='#'>
+            <span class='icofont-behance'></span>
+          </a>
+        </div>
+      </div>
+    </div>
+    <a class='back-to-top' href='#'>
+      <i class='icofont-simple-up'></i>
+    </a>
+  </footer>
+
+<%= javascript_include_tag "application" %>
+
+</html>
