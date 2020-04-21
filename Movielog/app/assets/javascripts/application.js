@@ -24,5 +24,5 @@ require("channels")
 //= require bootstrap/js/bootstrap
 //= require isotope/isotope.pkgd
 //= require aos/aos
-//= require owl.carousel/owl.carousel
+//= require owlcarousel/owl.carousel
 //= require main

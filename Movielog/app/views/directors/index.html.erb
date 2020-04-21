@@ -1,17 +1,17 @@
 <section class="section site-portfolio">
   <div class="container">
     <div class="row mb-5 align-items-center">
-      <div class="col-md-12 col-lg-6 mb-4 mb-lg-0">
+      <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
         <h2>Directors index</h2>
         <p class="mb-0">Find you favorite movie!</p>
       </div>
-      <div class="col-md-12 col-lg-6 text-left text-lg-right">
+      <div class="col-md-12 col-lg-6 text-left text-lg-right" data-aos="fade-up" data-aos-delay="100">
         <div class="filters" id="filters">
           <%= link_to 'Works', works_path %>
         </div>
       </div>
     </div>
-    <div class="row no-gutter" id="portfolio-grid">
+    <div class="row no-gutter" id="portfolio-grid" data-aos="fade-up" data-aos-delay="200">
       <% @directors.each do |director|   %>
         <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
           <%= link_to work_path(director), class: 'item-wrap fancybox' do %>
