@@ -3,7 +3,7 @@
   <head>
     <meta charset='utf-8'>
     <meta content='width=device-width, initial-scale=1.0' name='viewport'>
-    <title>MyPortfolio Bootstrap Template - Index</title>
+    <title>Bootstrap Template - Movie Index</title>
     <meta content='' name='descriptison'>
     <meta content='' name='keywords'>
     <!-- Favicons -->
@@ -15,20 +15,18 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   </head>
 
   <!-- ======= Navbar ======= -->
   <nav class='navbar navbar-light custom-navbar'>
     <div class='container'>
-      <a class='navbar-brand' href='index.html'>Movie Index</a>
+      <div class='navbar-brand'><%= link_to 'Movie Library', works_path%></div>
       <a class='burger' data-target='#main-navbar' data-toggle='collapse' href='#'>
         <span></span>
       </a>
     </div>
   </nav>
-
-
+  
   <body>
     <%= yield %>
   </body>
@@ -66,6 +64,6 @@
       <i class='icofont-simple-up'></i>
     </a>
   </footer>
-<script src="assets/aos/aos.js"></script>
+<script src="/assets/aos/aos.js"></script>
 
 </html>

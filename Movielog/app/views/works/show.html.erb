@@ -1,0 +1,62 @@
+<section class="section site-portfolio">
+<div class="container">
+  <h2>Movie data</h2><br>
+  <h3><%= @work.Title %></h3>
+  <h5><%= @work.director.Director%></h5><br>
+</div>
+
+<div class="container">
+  <div class="row" id="portfolio-grid" data-aos="fade-up" data-aos-delay="200">
+    <div class="col-6">
+      <img class="row mb-5 img-fluid" src="/img/img_3.jpg"/>
+    </div>
+    <div class='col-6'>
+      <div class="row mb-2 align-items-center"><%= @work.Description %></div>
+      <div class="row mb-5 align-items-center"><%= @work.Starring %></div>
+    </div>
+  </div>
+</div>
+<div class="container">
+  <p>
+    <%= link_to 'Edit movie', edit_work_path, class: 'btn btn-info'%>
+  </p>
+  <p>
+    <%= link_to 'Add new movie', new_work_path, class: 'btn btn-primary' %>
+  </p>
+  <p>
+    <%= link_to 'Add new director', new_director_path, class: 'btn btn-success' %>
+  </p>
+</div>
+<div class="container">
+  <p>
+    <%= link_to 'Delete', work_path(@work), method: :delete, data: {confirm: 'sure?'}, class: 'btn btn-outline-dark' %>
+  </p>
+  <p>
+    <%= link_to 'Back', works_path, class: 'btn btn-outline-info' %>
+  </p>
+</div>
+</section>
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Dirctor</th>
+        <th>Year</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>
+          <%= link_to @work.Title, edit_work_path %>
+        </td>
+        <td>
+          <%= link_to @work.director.Director, edit_director_path(@work.director_id) %>
+        </td>
+        <td>
+          <%= @work.ReleaseYear %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
