@@ -1,39 +1,30 @@
 <section class="section site-portfolio">
 <div class="container">
-  <h2>Movie data</h2><br>
-  <h3><%= @work.Title %></h3>
-  <h5><%= @work.director.Director%></h5><br>
+  <h5>Movie data</h5><br>
+  <h2><%= @work.Title %></h2>
+  <div>Release: <%=@work.ReleaseYear%></div>
+  <div>Starring: <%=@work.Starring %></h5></div><br>
 </div>
 
-<div class="container">
-  <div class="row" id="portfolio-grid" data-aos="fade-up" data-aos-delay="200">
+<div class="container" data-aos="fade-up">
+  <div class="row" id="portfolio-grid">
     <div class="col-6">
-      <img class="row mb-5 img-fluid" src="/img/img_3.jpg"/>
+      <img class="row mb-3 img-fluid" src="/img/img_3.jpg"/>
     </div>
     <div class='col-6'>
-      <div class="row mb-2 align-items-center"><%= @work.Description %></div>
-      <div class="row mb-5 align-items-center"><%= @work.Starring %></div>
+      <div class="row mb-3 align-items-center"><%= @work.Description %></div>
+      <div class="row align-items-center">Director:</div>
+      <div class="row mb-3 align-items-center"><%= link_to @work.director.Director, director_path(@work.director_id) %></div>
     </div>
   </div>
-</div>
-<div class="container">
-  <p>
-    <%= link_to 'Edit movie', edit_work_path, class: 'btn btn-info'%>
-  </p>
-  <p>
-    <%= link_to 'Add new movie', new_work_path, class: 'btn btn-primary' %>
-  </p>
-  <p>
-    <%= link_to 'Add new director', new_director_path, class: 'btn btn-success' %>
-  </p>
-</div>
-<div class="container">
-  <p>
-    <%= link_to 'Delete', work_path(@work), method: :delete, data: {confirm: 'sure?'}, class: 'btn btn-outline-dark' %>
-  </p>
-  <p>
-    <%= link_to 'Back', works_path, class: 'btn btn-outline-info' %>
-  </p>
+
+  <div class='row mb-5'>
+    <div class='col-1'><%= link_to 'Edit', edit_work_path, class: 'btn btn-outline-info'%></div>
+    <div class='col-1'><%= link_to 'Delete', work_path(@work), method: :delete, data: {confirm: 'sure?'}, class: 'btn btn-outline-dark' %></div>
+  </div>
+  <div class='row'>
+    <div class='col'><%= link_to 'Back', works_path, class: 'btn btn-primary' %></div>
+  </div>
 </div>
 </section>
 <div class="container">
@@ -60,3 +51,5 @@
     </tbody>
   </table>
 </div>
+<div class='col'><%= link_to 'Add movie', new_work_path, class: 'btn btn-primary' %></div>
+<div class='col'><%= link_to 'Add director', new_director_path, class: 'btn btn-success' %></div>

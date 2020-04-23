@@ -1,0 +1,50 @@
+<section class="section site-portfolio">
+<div class="container">
+  <h5>Director data</h5><br>
+  <h2><%= @director.Director %></h2>
+  <div>Country: <%=@director.Country%></div>
+</div>
+
+<div class="container" data-aos="fade-up">
+  <div class="row" id="portfolio-grid">
+    <div class="col-6">
+      <img class="row mb-3 img-fluid" src="/img/img_4.jpg"/>
+    </div>
+    <div class='col-6'>
+      <div class="row mb-3 align-items-center"><%= @director.Director %></div>
+    </div>
+  </div>
+
+  <div class='row mb-5'>
+    <div class='col-1'><%= link_to 'Edit', edit_director_path, class: 'btn btn-outline-info'%></div>
+    <div class='col-1'><%= link_to 'Delete', director_path, method: :delete, data: {confirm: 'sure?'}, class: 'btn btn-outline-dark' %></div>
+  </div>
+  <div class='row'>
+    <div class='col'><%= link_to 'Back', directors_path, class: 'btn btn-primary mb-5' %></div>
+  </div>
+</div>
+
+<div class="container" data-aos="fade-up">
+  <h5>Other movies of <%= @director.Director %></h5><br>
+
+  <div class="row no-gutter" id="portfolio-grid" data-aos="fade-up" data-aos-delay="200">
+    <% @director.works.each do |work| %>
+      <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
+        <%= link_to work_path(work), class: 'item-wrap fancybox' do %>
+          <div class="work-info">
+            <h3><%= work.Title %></h3>
+            <span><%= work.ReleaseYear %></span>
+            <br/>
+            <span><%= work.director.Director %></span>
+          </div>
+          <img class="img-fluid" src="/img/img_6.jpg"/>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+
+
+</div>
+
+</section>

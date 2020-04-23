@@ -15,6 +15,9 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <!--
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  -->
   </head>
 
   <!-- ======= Navbar ======= -->
@@ -64,6 +67,13 @@
       <i class='icofont-simple-up'></i>
     </a>
   </footer>
+
 <script src="/assets/aos/aos.js"></script>
+<!-- 
+<script src="/assets/store.legacry.min.js"></script>
+<script src='https://cdn.jsdelivr.net/npm/store-js@2.0.4/dist/store.legacy.min.js'></script>
+-->
+<%= javascript_include_tag "application" %> 
+
 
 </html>
